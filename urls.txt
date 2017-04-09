@@ -1,0 +1,1 @@
+({'react': 'http://reactjs.com', 'vk': 'http://www.vk.com', '3': 'http://', '0': 'http://ya.ru', '2': 'http://', '1': 'https://yandex.ru'}, 4)
