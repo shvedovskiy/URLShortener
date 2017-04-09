@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Shorten URL</h1>
+
+    {% for error in errors %}
+        <p>{{ error }}</p>
+    {% endfor %}
+
+    <form method="post" action="/new">
+        <label for="url">Your URL: </label>
+        <input type="text" id="url" name="url" value="{{ url }}">
+
+        <label for="new-url">New URL (optional): </label>
+        <input type="text" id="new-url" name="new-url" value="{{ new_url }}">
+
+        <input type="submit" value="Shorten!">
+    </form>
+{% endblock %}
