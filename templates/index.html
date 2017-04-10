@@ -1,19 +1,27 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Shorten URL</h1>
+    <header>
+        <h1 class="title">Shorten URL</h1>
+    </header>
 
+    <ul class="errors">
     {% for error in errors %}
-        <p>{{ error }}</p>
+        <li class="error_item">{{ error }}</li>
     {% endfor %}
+    </ul>
 
-    <form method="post" action="/new">
-        <label for="url">Your URL: </label>
-        <input type="text" id="url" name="url" value="{{ url }}">
+    <form method="post" action="/new" class="url_form">
+        <div class="url_form_element">
+            <label for="url">Your long URL: </label>
+            <input type="text" name="url" id="url" class="url_form_input" placeholder="e.g. http://www.maps.yandex.ru" value="{{ url }}">
+        </div>
 
-        <label for="new-url">New URL (optional): </label>
-        <input type="text" id="new-url" name="new-url" value="{{ new_url }}">
+        <div class="url_form_element">
+            <label for="new-url">Custom alias (optional): <span class="custom_url_prefix">http://127.0.0.1:3003/get/</span></label>
+            <input type="text" id="new-url" name="new-url" class="url_form_input" placeholder="e.g. map" value="{{ new_url }}">
+        </div>
 
-        <input type="submit" value="Shorten!">
+        <input type="submit" class="url_form_submit" value="Shorten!">
     </form>
 {% endblock %}
