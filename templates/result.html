@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h2>Result</h2>
-    <input type="text" value="{{ url }}" onFocus="this.select()" autofocus>
+    <header>
+        <h1 class="title">Shorten Result</h1>
+    </header>
+    <div class="result_element">
+        <input type="text" class="result" value="{{ url }}" onFocus="this.select()" autofocus>
+    </div>
 {% endblock %}

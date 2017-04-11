@@ -5,23 +5,31 @@
         <h1 class="title">Shorten URL</h1>
     </header>
 
-    <ul class="errors">
-    {% for error in errors %}
-        <li class="error_item">{{ error }}</li>
-    {% endfor %}
-    </ul>
+    {% if errors %}
+        <ul class="errors">
+        {% for error in errors %}
+            <li class="error_item">{{ error }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
 
     <form method="post" action="/new" class="url_form">
-        <div class="url_form_element">
-            <label for="url">Your long URL: </label>
-            <input type="text" name="url" id="url" class="url_form_input" placeholder="e.g. http://www.maps.yandex.ru" value="{{ url }}">
+        <fieldset>
+            <div class="url_form_element">
+                <label for="url">Your long URL: </label>
+                <div class="url_form_input_element">
+                    <input type="text" name="url" id="url" class="url_form_input" placeholder="e.g. http://www.maps.yandex.ru" value="{{ url }}">
+                </div>
+            </div>
+            <div class="url_form_element">
+                <label for="new-url">Custom alias (optional): </label><!--<span class="custom_url_prefix">http://127.0.0.1:3003/get/</span></label>-->
+                <div class="url_form_input_element">
+                    <input type="text" name="new-url" id="new-url" class="url_form_input" placeholder="http://127.0.0.1:3003/get/" value="{{ new_url }}">
+                </div>
+            </div>
+        </fieldset>
+        <div class="url_form_submit_element">
+                <input type="submit" class="url_form_submit" value="Shorten!">
         </div>
-
-        <div class="url_form_element">
-            <label for="new-url">Custom alias (optional): <span class="custom_url_prefix">http://127.0.0.1:3003/get/</span></label>
-            <input type="text" id="new-url" name="new-url" class="url_form_input" placeholder="e.g. map" value="{{ new_url }}">
-        </div>
-
-        <input type="submit" class="url_form_submit" value="Shorten!">
     </form>
 {% endblock %}

@@ -1,65 +1,235 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     padding: 0;
     margin: 0;
     height: 100%;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    background-color: #f5f5f5;
 }
 
 .content {
     margin: 0 auto;
-    width: 60%;
-
+    width: 70%;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 3px 15px rgba(51, 51, 51, 0.5);
+    min-width: 300px;
 }
 
 header {
+    margin-top: 20%;
+    padding: 10px;
     text-align: center;
-    border-bottom: 1px solid black;
+    color: #333;
 }
     .title {
+        color: inherit;
+        font-size: 36px;
     }
 
 .errors {
+    margin: 0 auto 25px auto;
+    width: 90%;
     list-style-type: none;
     background-image: linear-gradient(to bottom, #f2dede 0, #e7c3c3 100%);
     border-color: #dca7a7;
     color: #a94442;
-    padding: 15px 25px;
+    padding: 5px 25px;
     border-radius: 4px;
-    margin-bottom: 25px;
 }
     .error_item {
         color: inherit;
-        margin: 5px 0;
+        margin: 15px 0;
         font-size: 16px;
     }
 
 .url_form {
-    position: relative;
+    overflow: hidden;
     font-size: 18px;
-    padding: 0 15px;
+    padding: 0 25px;
+    margin: 0 auto;
+    width: 90%;
 }
+    .url_form fieldset {
+        border: 0;
+        padding: 0;
+    }
     .url_form_element {
         margin: 10px 0;
+        line-height: 2;
+        clear: both;
+        overflow: hidden;
     }
+        .url_form_element label {
+            display: inline-block;
+            width: 30%;
+            float: left;
+            padding-right: 10px;
+            vertical-align: middle;
+        }
         .custom_url_prefix {
             font-size: 14px;
         }
-        .url_form_input {
-            position: absolute;
-            right: 0;
-            width: 75%;
+        .url_form_input_element {
+            width: 70%;
+            float: right;
         }
-        .url_form_element:last-of-type .url_form_input {
-            width: 50%;
+            .url_form_input {
+                width: 100%;
+                border: 1px solid #dfdfdf;
+                font-size: 16px;
+                color: rgb(102, 102, 102);
+                background-color: #f5f5f5;
+                border-radius: 4px;
+                font-weight: 100;
+                line-height: 2;
+                padding-left: 5px;
+
+            }
+            .url_form_input:focus {
+                outline: none;
+                border-color: #4697e4;
+            }
+
+            .url_form_input::-webkit-input-placeholder {
+                color: rgb(204, 204, 204);
+                opacity: 1;
+                -webkit-transition: opacity 0.3s ease;
+                transition: opacity 0.3s ease;
+            }
+            .url_form_input::-moz-placeholder {
+                color: rgb(204, 204, 204);
+                opacity: 1;
+                -webkit-transition: opacity 0.3s ease;
+                transition: opacity 0.3s ease;
+            }
+            .url_form_input:-moz-placeholder {
+                color: rgb(204, 204, 204);
+                opacity: 1;
+                -webkit-transition: opacity 0.3s ease;
+                transition: opacity 0.3s ease;
+            }
+            .url_form_input:-ms-input-placeholder {
+                color: rgb(204, 204, 204);
+                opacity: 1;
+                -webkit-transition: opacity 0.3s ease;
+                transition: opacity 0.3s ease;
+            }
+            .url_form_input:focus::-webkit-input-placeholder {
+                opacity: 0;
+                -webkit-transition: opacity 0.3s ease;
+                transition: opacity 0.3s ease;
+            }
+            .url_form_input:focus::-moz-placeholder {
+                opacity: 0;
+                -webkit-transition: opacity 0.3s ease;
+                transition: opacity 0.3s ease;
+            }
+            .url_form_input:focus:-moz-placeholder {
+                opacity: 0;
+                -webkit-transition: opacity 0.3s ease;
+                transition: opacity 0.3s ease;
+            }
+            .url_form_input:focus:-ms-input-placeholder {
+                opacity: 0;
+                -webkit-transition: opacity 0.3s ease;
+                transition: opacity 0.3s ease;
+            }
+    .url_form_submit_element {
+        text-align: center;
+        margin: 30px auto;
+    }
+
+        .url_form_submit {
+            display: inline-block;
+            border: 1px solid #3e8f3e;
+            border-radius: 4px;
+            text-decoration: none;
+            background-image: linear-gradient(to bottom,#5cb85c 0,#419641 100%);
+            padding: 6px 12px;
+            color: #fff;
+            font-size: 18px;
+            line-height: 1.5;
+            width: 150px;
         }
+            .url_form_submit:focus,
+            .url_form_submit:hover {
+                background: #419641 none 0 -15px;
+                border-color: #398439;
+                outline: none;
+            }
+            .url_form_submit:active {
+                background-color: #449d44;
+            }
+
+.result_element {
+    clear: both;
+    margin: 25px auto;
+    width: 80%;
+}
+    .result {
+        width: 100%;
+        border: 1px solid #dfdfdf;
+        font-size: 16px;
+        color: rgb(102, 102, 102);
+        background-color: #f5f5f5;
+        border-radius: 4px;
+        font-weight: 100;
+        line-height: 2;
+        padding-left: 5px;
+        margin-bottom: 25px;
+    }
+        .result:focus {
+            outline: none;
+            border-color: #4697e4;
+        }
+
+footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    font-size: 12px;
+    padding-bottom: 8px;
+    font-weight: 100;
+    letter-spacing: 0.25em;
+    color: #b2b2b2;
+}
+
+@media (max-width: 700px) {
+    .title {
+        font-size: 28px;
+    }
+
+    .error_item {
+        font-size: 14px;
+    }
+
+    .url_form_element {
+        font-size: 16px;
+    }
+        .url_form_element label {
+            width: 100%;
+            float: none;
+        }
+        .url_form_input_element {
+            width: 100%;
+            float: none;
+        }
+            .url_form_input {
+                font-size: 14px;
+            }
 
     .url_form_submit {
-        border-color: #eea236;
-        text-decoration: none;
-        background: linear-gradient(top, #f0ad4e 0, #eb9316 100%) repeat-x;
-        padding: 6px 12px;
+        width: 100%;
     }
-        .url_form_submit:hover {
-            background: #eb9316 none 0 -15px;
-        }
+}
 
+@media (min-width: 1200px) {
+    .url_form_element label {
+        text-align: left;
+    }
+}

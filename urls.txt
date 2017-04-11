@@ -1,1 +1,1 @@
-({'react': 'http://reactjs.com', 'vk': 'http://www.vk.com', '3': 'http://', '0': 'http://ya.ru', '2': 'http://', '1': 'https://yandex.ru'}, 4)
+({'6': 'http://www.ya.ru', '4': 'http://ya.ru', 'react': 'http://reactjs.com', '7': 'http://www.ya.ru', '0': 'http://ya.ru', '3': 'http://', '1': 'https://yandex.ru', '2': 'http://', '8': 'http://www.ya.ru', '5': 'http://ya.ru', 'vk': 'http://www.vk.com'}, 9)
