@@ -5,9 +5,12 @@ DATA_FILENAME = os.path.dirname(__file__) + '/urls.txt'
 
 
 def _load_urls():
+    if not os.path.exists(DATA_FILENAME) or os.stat(DATA_FILENAME).st_size == 0:
+        with open(DATA_FILENAME, 'w', encoding=DATA_ENCODING) as new_data_file:
+            new_data_file.write('({}, 0)')
+
     with open(DATA_FILENAME, 'r', encoding=DATA_ENCODING) as data_file:
         return eval(data_file.read())
-
 
 entries, next_url = _load_urls()
 
